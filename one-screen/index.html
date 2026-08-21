@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Owner's One-Screen</title>
+<meta name="theme-color" content="#07070b">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2307070b'/%3E%3Crect x='18' y='18' width='28' height='28' rx='7' fill='%234ade80'/%3E%3Crect x='54' y='18' width='28' height='28' rx='7' fill='%23303040'/%3E%3Crect x='18' y='54' width='28' height='28' rx='7' fill='%23303040'/%3E%3Crect x='54' y='54' width='28' height='28' rx='7' fill='%23303040'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#07070b; --card:#0d0d14; --border:rgba(255,255,255,0.08);
+    --txt:#f2f2fa; --mute:#9a9ab0; --dim:#6a6a82;
+    --red:#f87171; --amber:#fbbf24; --green:#4ade80; --blue:#60a5fa;
+    --green-bg:#163021; --green-bd:rgba(74,222,128,0.55);
+    --red-bg:#48201f;   --red-bd:rgba(248,113,113,0.55);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg)}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--txt);-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1020px;margin:0 auto;padding:26px 30px 46px}
+
+  .head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:20px;flex-wrap:wrap}
+  .eyebrow{font-size:11px;font-weight:700;color:var(--dim);text-transform:uppercase;letter-spacing:1.6px;margin-bottom:3px}
+  .name{font-size:24px;font-weight:800;letter-spacing:-0.8px;line-height:1.05}
+  .updated{font-size:11px;color:var(--dim);margin-top:4px}
+  .cadence{font-size:11px;color:var(--mute);text-align:right;line-height:1.5}
+  .cadence b{color:var(--txt)}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .tile{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px 22px;min-height:150px;display:flex;flex-direction:column}
+  .tile.live{grid-column:span 3;background:var(--green-bg);border-color:var(--green-bd);min-height:0}
+  .tile .eng{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.4px;color:var(--mute);display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .tile.live .eng{color:var(--green)}
+  .chip{font-size:10px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;padding:4px 10px;border-radius:99px;background:rgba(255,255,255,0.09);color:var(--mute)}
+  .tile.live .chip{background:rgba(0,0,0,0.32);color:var(--green);border:1px solid var(--green-bd)}
+
+  .liverow{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:16px}
+  .m .k{font-size:11.5px;color:var(--mute)}
+  .m .v{font-size:30px;font-weight:800;letter-spacing:-1px;font-variant-numeric:tabular-nums;margin-top:2px}
+  .m .v small{font-size:14px;color:var(--dim);font-weight:600;letter-spacing:0}
+  .m .s{font-size:11.5px;margin-top:3px;font-weight:600}
+  .g{color:var(--green)} .a{color:var(--amber)} .r{color:var(--red)} .b{color:var(--blue)}
+  .openlink{display:inline-block;margin-top:16px;font-size:11px;font-weight:700;letter-spacing:1px;
+    text-transform:uppercase;color:#0a130d;background:var(--green);padding:9px 16px;border-radius:99px;text-decoration:none}
+  .openlink:hover{opacity:.9}
+
+  .metricname{font-size:22px;font-weight:800;letter-spacing:-0.6px;color:var(--txt);margin-top:14px}
+  .metricsub{font-size:12.5px;color:var(--mute);margin-top:4px;line-height:1.5;flex:1}
+  .pend{margin-top:12px;font-size:10.5px;font-weight:600;letter-spacing:0.8px;text-transform:uppercase;color:var(--dim);
+    border:1.5px dashed rgba(255,255,255,0.16);border-radius:9px;padding:7px 11px;width:fit-content}
+
+  .opsrow{display:flex;justify-content:space-between;align-items:center;gap:14px;background:var(--card);
+    border:1px solid var(--border);border-radius:14px;padding:13px 20px;margin-top:14px;flex-wrap:wrap}
+  .opsrow .k{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.4px;color:var(--mute)}
+  .opsrow .v{font-size:13px;color:var(--txt);font-weight:600}
+  .opsrow .v span{color:var(--dim);font-weight:400}
+
+  .foot{margin-top:22px;font-size:12px;color:var(--dim);line-height:1.6;max-width:70ch}
+  .foot b{color:var(--mute)}
+
+  .state{padding:60px 20px;text-align:center;color:var(--mute);font-size:14px}
+  .state .err{color:var(--red);font-weight:600}
+
+  @media (max-width:760px){
+    .wrap{padding:18px 16px 36px}
+    .grid{grid-template-columns:1fr}
+    .tile.live{grid-column:span 1}
+    .liverow{grid-template-columns:1fr 1fr;gap:14px}
+    .cadence{text-align:left}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <div>
+      <div class="eyebrow">Operator OS · Operations</div>
+      <div class="name">The owner's one-screen</div>
+      <div class="updated" id="updated">loading&hellip;</div>
+    </div>
+    <div class="cadence">one glance, monday morning.<br><b>you steer, you don't row.</b></div>
+  </div>
+
+  <div class="grid" id="grid">
+    <div class="tile live">
+      <div class="eng">Sales <span class="chip">wired · live</span></div>
+      <div class="liverow" id="salesrow"><div class="state" style="grid-column:span 4;padding:20px">reading the live feed&hellip;</div></div>
+      <a class="openlink" href="https://4rmnkhn.github.io/operator-scorecard/">drill into the scorecard →</a>
+    </div>
+
+    <div class="tile">
+      <div class="eng">Offer <span class="chip">install · week 1</span></div>
+      <div class="metricname">cash collected</div>
+      <div class="metricsub">collected vs closed, this month. the number the bank account agrees with, next to the one the crm brags about.</div>
+      <div class="pend">wires to stripe on install</div>
+    </div>
+
+    <div class="tile">
+      <div class="eng">Attention <span class="chip">install · week 1</span></div>
+      <div class="metricname">vs your median</div>
+      <div class="metricsub">this week's uploads against your own trailing median. above 1× means the engine gained ground.</div>
+      <div class="pend">wires to youtube + instagram</div>
+    </div>
+
+    <div class="tile">
+      <div class="eng">Delivery <span class="chip">install · week 2</span></div>
+      <div class="metricname">client health</div>
+      <div class="metricsub">clients green on results and touchpoints, out of total. churn shows up here weeks before it shows up in stripe.</div>
+      <div class="pend">wires to the eod report</div>
+    </div>
+  </div>
+
+  <div class="opsrow">
+    <span class="k">Operations</span>
+    <span class="v" id="opsline">instruments reporting: 1 of 4 <span>· the sales feed updates itself hourly, no laptop involved</span></span>
+  </div>
+
+  <p class="foot">this is a real instrument, live on the sales engine of the last business i ran.
+  the three dark tiles are what an install wires up in the first two weeks: same screen, five
+  engines, every monday. <b>the point of the one-screen: the owner reads five numbers in ninety
+  seconds and knows where to lean.</b></p>
+</div>
+
+<script>
+const CACHE = "https://raw.githubusercontent.com/4rmnkhn/noah-setter-scorecard/main/setter_cache.json";
+const WEEKLY_TARGET = 20;
+const TZ = "America/Chicago";
+
+function bizWeekdayMon0(){
+  const wd = new Intl.DateTimeFormat('en-CA',{timeZone:TZ,weekday:'short'}).format(new Date());
+  return {Mon:0,Tue:1,Wed:2,Thu:3,Fri:4,Sat:5,Sun:6}[wd];
+}
+
+async function load(){
+  try{
+    const r = await fetch(CACHE + '?t=' + Date.now(), {cache:'no-store'});
+    if(!r.ok) throw new Error('HTTP ' + r.status);
+    const data = await r.json();
+    const m = data.metrics;
+
+    const upd = new Date(data.generated_at);
+    document.getElementById('updated').textContent = 'live feed · updated ' +
+      new Intl.DateTimeFormat('en-US',{timeZone:TZ,month:'short',day:'2-digit',hour:'numeric',minute:'2-digit'}).format(upd);
+
+    const daysElapsed = bizWeekdayMon0() + 1;
+    const pace = WEEKLY_TARGET * daysElapsed / 7;
+    const onPace = m.week_booked >= pace * 0.85;
+    const sticking = m.reschedules + m.true_cancels > 0
+      ? Math.round(100 * m.reschedules / (m.reschedules + m.true_cancels)) : 100;
+
+    document.getElementById('salesrow').innerHTML = `
+      <div class="m"><div class="k">booked this week</div>
+        <div class="v">${m.week_booked}<small> / ${WEEKLY_TARGET}</small></div>
+        <div class="s ${onPace?'g':'r'}">${onPace?'on pace':'behind pace'}</div></div>
+      <div class="m"><div class="k">calls on the calendar</div>
+        <div class="v">${m.upcoming}</div>
+        <div class="s b">upcoming, held</div></div>
+      <div class="m"><div class="k">booked today</div>
+        <div class="v">${m.today_booked}</div>
+        <div class="s ${m.today_booked>0?'g':'a'}">${m.today_booked>0?'moving':'none yet today'}</div></div>
+      <div class="m"><div class="k">cancels that rebook</div>
+        <div class="v">${sticking}<small>%</small></div>
+        <div class="s ${sticking>=70?'g':'a'}">${m.reschedules} of ${m.reschedules + m.true_cancels} came back</div></div>`;
+  }catch(e){
+    document.getElementById('salesrow').innerHTML =
+      `<div class="state" style="grid-column:span 4"><span class="err">live feed unreachable.</span> ${e.message}</div>`;
+  }
+}
+load();
+</script>
+</body>
+</html>
