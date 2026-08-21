@@ -33,7 +33,7 @@
 
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
   .tile{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px 22px;min-height:150px;display:flex;flex-direction:column}
-  .tile.live{grid-column:span 3;background:var(--green-bg);border-color:var(--green-bd);min-height:0}
+  .tile.live{grid-column:span 3;border-color:var(--green-bd);min-height:0}
   .tile .eng{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.4px;color:var(--mute);display:flex;justify-content:space-between;align-items:center;gap:8px}
   .tile.live .eng{color:var(--green)}
   .chip{font-size:10px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;padding:4px 10px;border-radius:99px;background:rgba(255,255,255,0.09);color:var(--mute)}
@@ -45,7 +45,7 @@
   .m .v small{font-size:14px;color:var(--dim);font-weight:600;letter-spacing:0}
   .m .s{font-size:11.5px;margin-top:3px;font-weight:600}
   .g{color:var(--green)} .a{color:var(--amber)} .r{color:var(--red)} .b{color:var(--blue)}
-  .openlink{display:inline-block;margin-top:16px;font-size:11px;font-weight:700;letter-spacing:1px;
+  .openlink{display:inline-block;align-self:flex-start;margin-top:16px;font-size:11px;font-weight:700;letter-spacing:1px;
     text-transform:uppercase;color:#0a130d;background:var(--green);padding:9px 16px;border-radius:99px;text-decoration:none}
   .openlink:hover{opacity:.9}
 
