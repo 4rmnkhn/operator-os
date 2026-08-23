@@ -6,7 +6,7 @@ engines diagnosed, our assets offered as the fix. Approved shape: HaydenOS, 2026
 
 ## The shape (locked 2026-08-20, do not renegotiate per prospect)
 
-- **Flywheel on desktop, ordered stack on phone.** Offer at the hub, three engines on the ring
+- **One scroll, no panels (v2, 2026-08-23).** Everything visible on the way down; every live asset one click via an OPEN button. The engine strip at the top is a map that scrolls, never an overlay. Boot, count-ups and chart growth stay: premium is the animation layer, never the navigation.
   (Attention, Sales, Delivery), Operations as the outer ring. Guided 1-2-3 badges point at the
   red engine first.
 - **No sealing.** Everything on the page is given. The sell is speed of install, not access.
