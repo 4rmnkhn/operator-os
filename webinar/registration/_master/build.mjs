@@ -49,7 +49,6 @@ data.hasObjection = data._template || !!(data.objection && data.objection.head);
 data.hasBonus = data._template || !!(data.bonus && data.bonus.head);
 data.optclass = data._template ? "opt" : "card";
 data.hasVideo = data._template || !!(data.video && data.video.id);
-data.hasOutliers = data._template || !!(data.outliers && data.outliers.filter(o => o && o.id).length);
 
 let html = readFileSync(join(here, 'index.html'), 'utf8');
 

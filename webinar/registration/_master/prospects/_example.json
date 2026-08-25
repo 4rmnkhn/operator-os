@@ -14,25 +14,12 @@
     "id": null,
     "caption": ""
   },
-  "outliers": [
-    {
-      "id": null,
-      "caption": ""
-    },
-    {
-      "id": null,
-      "caption": ""
-    },
-    {
-      "id": null,
-      "caption": ""
-    }
-  ],
   "proof": {
     "tier": "C",
     "tierC": {
       "text": "what the host can honestly show today",
-      "img": null
+      "img": null,
+      "vid": null
     }
   },
   "takeaways": [

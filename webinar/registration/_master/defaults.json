@@ -26,15 +26,18 @@
       "after": "⟦AFTER⟧",
       "after_when": "⟦when⟧",
       "limit": "⟦Name the limit of the number out loud, in your own words. Then offer to show the live source on the call.⟧",
-      "img": null
+      "img": null,
+      "vid": null
     },
     "tierB": {
       "caption": "⟦Who, what result, how long. One sentence. Full breakdown on the call.⟧",
-      "img": null
+      "img": null,
+      "vid": null
     },
     "tierC": {
       "text": "⟦The artifact itself: the actual system, the real document, a live walkthrough of the thing working. Showing the machine is honest proof when you have no outcome to point at yet. Say plainly that this is what you have.⟧",
-      "img": null
+      "img": null,
+      "vid": null
     }
   },
   "takeaways": [
@@ -78,20 +81,5 @@
   "video": {
     "id": null,
     "caption": ""
-  },
-  "outliers": [
-    {
-      "id": null,
-      "caption": ""
-    },
-    {
-      "id": null,
-      "caption": ""
-    },
-    {
-      "id": null,
-      "caption": ""
-    }
-  ],
-  "outliers_title": "Recent uploads"
+  }
 }
