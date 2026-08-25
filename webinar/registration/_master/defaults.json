@@ -1,0 +1,53 @@
+{
+  "meta": { "title": "Webinar Registration — Master Template" },
+  "accent": "#3355ff",
+  "who": "⟦WHO IT IS FOR, IN THEIR OWN WORDS⟧",
+  "when": { "day": "⟦DAY, DATE⟧", "time": "⟦TIME, ZONE⟧", "mode": "Live online" },
+  "headline": "⟦ONE OUTCOME. A thing that happens, with a number or a concrete noun in it. Not a topic.⟧",
+  "subline": "⟦The one thing in their way, named. Then: and exactly how I fix it.⟧",
+  "cta": "Save my seat",
+  "under_cta": "Free · Live online",
+  "objection": {
+    "head": "⟦Their exact disbelief, said back to them as a sentence.⟧",
+    "answer": "⟦Then answer it plainly, in one or two sentences. Big type, not small print. This is the single line that moved Elaine's opt-in from 7% to 12%.⟧"
+  },
+  "proof": {
+    "tier": "ALL",
+    "tierA": {
+      "line": "⟦the one line version of the story⟧",
+      "before": "⟦BEFORE⟧", "before_when": "⟦when⟧",
+      "after": "⟦AFTER⟧", "after_when": "⟦when⟧",
+      "limit": "⟦Name the limit of the number out loud, in your own words. Then offer to show the live source on the call.⟧",
+      "img": null
+    },
+    "tierB": {
+      "caption": "⟦Who, what result, how long. One sentence. Full breakdown on the call.⟧",
+      "img": null
+    },
+    "tierC": {
+      "text": "⟦The artifact itself: the actual system, the real document, a live walkthrough of the thing working. Showing the machine is honest proof when you have no outcome to point at yet. Say plainly that this is what you have.⟧",
+      "img": null
+    }
+  },
+  "takeaways": [
+    { "t": "⟦Takeaway one⟧", "d": "⟦The thing they can do after the hour that they cannot do now. Name the mechanism, not the benefit.⟧" },
+    { "t": "⟦Takeaway two⟧", "d": "⟦Same test. If a competitor could paste this line on their page, it is too vague.⟧" },
+    { "t": "⟦Takeaway three⟧", "d": "⟦Ideally the one with a number in it they can run themselves.⟧" }
+  ],
+  "bonus": {
+    "head": "⟦the thing that only exists in the room⟧",
+    "why": "⟦why it cannot be done any other way. The real reason.⟧"
+  },
+  "fields": ["Name", "Email", "⟦what do you sell⟧", "⟦roughly where are you at⟧", "⟦the one thing you are stuck on⟧"],
+  "confirm": {
+    "head": "⟦Confirmation headline. Say only what actually happens next.⟧",
+    "body": "⟦e.g. the calendar invite, the reminder, where the link arrives. Nothing you have not wired.⟧"
+  },
+  "form": { "note": "This form is not connected yet. At install it wires into your webinar tool, so registrations land where your reminders send from." },
+  "host": {
+    "name": "⟦NAME⟧",
+    "line": "⟦what you actually do, plainly. No credentials you cannot show.⟧",
+    "photo": null
+  },
+  "disclaimer": "⟦Disclaimer. Required if you state any result. Name the platforms you are not affiliated with.⟧"
+}

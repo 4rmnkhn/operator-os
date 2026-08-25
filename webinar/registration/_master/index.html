@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#f4f5fa">
+<title>{{meta.title}}</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+:root{ --accent:{{accent}}; --ink:#10131c; --ground:#f4f5fa; --sub:#4a5061; --muted:#8a90a2; --faint:#9aa0b4; --line:#dde1ec; --cardline:#e3e6ef; }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:Inter,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+.wrap{max-width:660px;margin:0 auto;padding:0 22px}
+.cta{display:block;width:100%;background:var(--accent);color:#fff;text-align:center;padding:16px;font-size:15.5px;font-weight:600;border-radius:7px;border:0;cursor:pointer;font-family:inherit;transition:transform 120ms ease,filter 180ms ease}
+.cta:hover{filter:brightness(1.08)}
+.cta:active{transform:scale(.99)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.rule{border-top:1px solid var(--line);padding-top:16px;display:flex;gap:9px;align-items:baseline}
+.verdict{font-size:9.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;flex:0 0 auto}
+.rulenote{font-size:11.5px;color:var(--muted);line-height:1.5}
+.optlab{font-size:9.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--accent)}
+.opt{border:1px dashed #c2c7d6;border-radius:8px;padding:14px 15px}
+.card{background:#fff;border:1px solid var(--cardline);border-radius:9px;padding:16px 15px}
+.slotbox{background:#e4e7f0;border-radius:8px;min-height:96px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;color:var(--muted);text-align:center;padding:10px}
+.section{padding-top:38px}
+.field{width:100%;border:1px solid var(--cardline);border-radius:7px;padding:14px 13px;font-size:14px;font-family:inherit;color:var(--ink);background:#fff;margin-bottom:10px;transition:border-color 150ms ease}
+.field:focus{outline:none;border-color:var(--accent)}
+.field::placeholder{color:var(--faint)}
+textarea.field{resize:vertical;min-height:74px}
+img{max-width:100%}
+h1{font-size:clamp(29px,6.5vw,40px);font-weight:800;line-height:1.16;letter-spacing:-.028em;margin:18px 0 0}
+h2{font-size:clamp(22px,5vw,27px);font-weight:800;line-height:1.25;letter-spacing:-.025em;margin:14px 0 0}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="wrap" style="padding-top:30px;text-align:center">
+  <div class="eyebrow">{{who}}</div>
+  <div style="font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#6b7183;margin-top:9px">{{when.day}} &nbsp;·&nbsp; {{when.time}} &nbsp;·&nbsp; {{when.mode}}</div>
+  <h1>{{headline}}</h1>
+  <p style="font-size:15.5px;line-height:1.6;color:var(--sub);margin:16px 0 0">{{subline}}</p>
+  <a href="#save" class="cta" style="margin-top:24px">{{cta}}</a>
+  <div style="font-size:11.5px;color:var(--muted);margin-top:10px">{{under_cta}}</div>
+</header>
+
+<!--IF:hasObjection-->
+<section class="wrap section">
+  <!--IF:_template-->
+  <div class="rule">
+    <span class="verdict" style="color:#a6abbb">optional</span>
+    <span class="rulenote">Keep this block only if the promise above sounds impossible, or the category is new to them. If it is ordinary for this audience, delete the whole block.</span>
+  </div>
+  <!--END:_template-->
+  <h2>{{objection.head}}</h2>
+  <p style="font-size:14.5px;line-height:1.65;color:var(--sub);margin:12px 0 0">{{objection.answer}}</p>
+</section>
+<!--END:hasObjection-->
+
+<section class="wrap section">
+  <!--IF:_template-->
+  <div class="rule">
+    <span class="verdict" style="color:var(--accent)">pick one</span>
+    <span class="rulenote">Proof. Use the highest tier you can fill <b style="font-weight:600">honestly</b>, then delete the other two. Never fill a tier you do not have.</span>
+  </div>
+  <!--END:_template-->
+
+  <!--IF:proof.showA-->
+  <div style="background:var(--ink);border-radius:13px;padding:24px 20px 20px;color:var(--ground);margin-top:14px">
+    <!--IF:_template--><div class="optlab" style="color:#6f7690">Tier A · your own numbers</div><!--END:_template-->
+    <div style="font-size:18.5px;font-weight:700;letter-spacing:-.02em;margin-top:10px">{{proof.tierA.line}}</div>
+    <div style="display:flex;gap:9px;margin-top:16px">
+      <div style="flex:1;background:#1b1f2b;border-radius:9px;padding:16px 10px;text-align:center">
+        <div style="font-size:23px;font-weight:800;letter-spacing:-.03em">{{proof.tierA.before}}</div>
+        <div style="font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:6px">{{proof.tierA.before_when}}</div>
+      </div>
+      <div style="flex:1;background:#1b1f2b;border-radius:9px;padding:16px 10px;text-align:center">
+        <div style="font-size:23px;font-weight:800;letter-spacing:-.03em;color:var(--accent)">{{proof.tierA.after}}</div>
+        <div style="font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:6px">{{proof.tierA.after_when}}</div>
+      </div>
+    </div>
+    <div style="font-size:12.5px;line-height:1.6;color:#a7adbd;margin-top:14px">{{proof.tierA.limit}}</div>
+    <!--IF:proof.tierA.img-->
+    <img src="{{proof.tierA.img}}" alt="the real dashboard, unretouched" style="border-radius:9px;margin-top:14px;display:block">
+    <!--ELSE:proof.tierA.img-->
+    <div class="slotbox" style="background:#fff;min-height:118px;margin-top:14px">⟦the real dashboard, unretouched⟧</div>
+    <!--END:proof.tierA.img-->
+  </div>
+  <!--END:proof.showA-->
+
+  <!--IF:proof.showB-->
+  <div class="{{optclass}}" style="margin-top:11px">
+    <!--IF:_template--><div class="optlab">Tier B · a client's result</div><!--END:_template-->
+    <!--IF:proof.tierB.img-->
+    <img src="{{proof.tierB.img}}" alt="client result, unretouched" style="border-radius:8px;margin-top:11px;display:block">
+    <!--ELSE:proof.tierB.img-->
+    <div class="slotbox" style="margin-top:11px">⟦their screenshot, unretouched⟧</div>
+    <!--END:proof.tierB.img-->
+    <div style="font-size:13px;line-height:1.55;color:var(--sub);margin-top:10px">{{proof.tierB.caption}}</div>
+  </div>
+  <!--END:proof.showB-->
+
+  <!--IF:proof.showC-->
+  <div class="{{optclass}}" style="margin-top:11px">
+    <!--IF:_template--><div class="optlab">Tier C · no numbers yet? show the work</div><!--END:_template-->
+    <div style="font-size:13px;line-height:1.6;color:var(--sub);margin-top:10px">{{proof.tierC.text}}</div>
+    <!--IF:proof.tierC.img-->
+    <img src="{{proof.tierC.img}}" alt="the artifact, on screen" style="border-radius:8px;margin-top:11px;display:block">
+    <!--ELSE:proof.tierC.img-->
+    <div class="slotbox" style="margin-top:11px">⟦the artifact, on screen⟧</div>
+    <!--END:proof.tierC.img-->
+  </div>
+  <!--END:proof.showC-->
+</section>
+
+<section class="wrap section">
+  <!--IF:_template-->
+  <div class="rule">
+    <span class="verdict" style="color:#a6abbb">required</span>
+    <span class="rulenote">Three takeaways. Each one a thing they can <b style="font-weight:600">do</b>, specific enough that a competitor could not paste the same line on their page.</span>
+  </div>
+  <!--END:_template-->
+  <div style="background:#fff;border:1px solid var(--cardline);border-left:3px solid var(--accent);border-radius:9px;padding:18px;margin-top:12px">
+    <div style="font-size:16px;font-weight:700;letter-spacing:-.015em">{{takeaways.0.t}}</div>
+    <div style="font-size:13px;line-height:1.6;color:var(--sub);margin-top:7px">{{takeaways.0.d}}</div>
+  </div>
+  <div style="background:#fff;border:1px solid var(--cardline);border-left:3px solid var(--accent);border-radius:9px;padding:18px;margin-top:12px">
+    <div style="font-size:16px;font-weight:700;letter-spacing:-.015em">{{takeaways.1.t}}</div>
+    <div style="font-size:13px;line-height:1.6;color:var(--sub);margin-top:7px">{{takeaways.1.d}}</div>
+  </div>
+  <div style="background:#fff;border:1px solid var(--cardline);border-left:3px solid var(--accent);border-radius:9px;padding:18px;margin-top:12px">
+    <div style="font-size:16px;font-weight:700;letter-spacing:-.015em">{{takeaways.2.t}}</div>
+    <div style="font-size:13px;line-height:1.6;color:var(--sub);margin-top:7px">{{takeaways.2.d}}</div>
+  </div>
+  <a href="#save" class="cta" style="margin-top:18px">{{cta}}</a>
+</section>
+
+<!--IF:hasBonus-->
+<section class="wrap section">
+  <!--IF:_template-->
+  <div class="rule">
+    <span class="verdict" style="color:#a6abbb">optional</span>
+    <span class="rulenote">Only if something genuinely happens live and cannot happen otherwise. No real reason means delete this block. Do not fill it with a scarcity line.</span>
+  </div>
+  <!--END:_template-->
+  <div style="background:#e7ecfb;border-radius:11px;padding:19px;margin-top:13px">
+    <div class="optlab">Live only</div>
+    <div style="font-size:16.5px;font-weight:700;line-height:1.3;letter-spacing:-.02em;margin-top:8px">{{bonus.head}}</div>
+    <div style="font-size:13px;line-height:1.6;color:var(--sub);margin-top:8px">{{bonus.why}}</div>
+  </div>
+</section>
+<!--END:hasBonus-->
+
+<section class="wrap section" id="save" style="padding-bottom:40px;text-align:center">
+  <div class="eyebrow" style="letter-spacing:.14em">Save your spot</div>
+  <div style="font-size:25px;font-weight:800;letter-spacing:-.03em;margin-top:10px">{{when.day}} <span style="color:var(--accent)">·</span> {{when.time}}</div>
+
+  <form id="regform" style="background:#fff;border:1px solid var(--cardline);border-radius:11px;padding:22px 18px;margin-top:16px;text-align:left" novalidate>
+    <input class="field" type="text" name="name" placeholder="{{fields.0}}" autocomplete="name" required>
+    <input class="field" type="email" name="email" placeholder="{{fields.1}}" autocomplete="email" required>
+    <input class="field" type="text" name="q1" placeholder="{{fields.2}}">
+    <input class="field" type="text" name="q2" placeholder="{{fields.3}}">
+    <textarea class="field" name="q3" placeholder="{{fields.4}}"></textarea>
+    <button type="submit" class="cta" style="margin-top:4px">{{cta}}</button>
+    <div style="font-size:11.5px;line-height:1.55;color:var(--muted);margin-top:12px;text-align:center">The last three answers are what make the hour about your situation. Keep them, they are the point.</div>
+  </form>
+
+  <div id="regdone" hidden style="background:#fff;border:1px solid var(--cardline);border-radius:11px;padding:30px 22px;margin-top:16px;text-align:center">
+    <div style="width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;font-size:22px;line-height:44px;margin:0 auto">✓</div>
+    <div style="font-size:19px;font-weight:800;letter-spacing:-.02em;margin-top:14px">{{confirm.head}}</div>
+    <div style="font-size:13.5px;line-height:1.6;color:var(--sub);margin-top:8px">{{confirm.body}}</div>
+  </div>
+
+  <div style="font-size:10.5px;line-height:1.5;color:var(--faint);margin-top:12px">{{form.note}}</div>
+
+  <div style="display:flex;align-items:center;gap:12px;margin-top:22px;text-align:left">
+    <!--IF:host.photo-->
+    <img src="{{host.photo}}" alt="{{host.name}}" style="width:42px;height:42px;border-radius:50%;object-fit:cover;flex:0 0 42px">
+    <!--ELSE:host.photo-->
+    <div style="width:42px;height:42px;border-radius:50%;background:#dfe2ec;flex:0 0 42px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:600;color:var(--muted)">⟦photo⟧</div>
+    <!--END:host.photo-->
+    <div style="font-size:12px;line-height:1.5;color:#6b7183">Run by <b style="font-weight:700;color:var(--ink)">{{host.name}}</b>. {{host.line}}</div>
+  </div>
+</section>
+
+<footer style="background:#e9ebf2;padding:18px 22px 26px;text-align:center">
+  <div class="wrap" style="font-size:10.5px;line-height:1.6;color:var(--muted)">{{disclaimer}}</div>
+</footer>
+
+<script>
+(function () {
+  var form = document.getElementById('regform');
+  var done = document.getElementById('regdone');
+  if (!form || !done) return;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var bad = false;
+    ['name', 'email'].forEach(function (n) {
+      var el = form.elements[n];
+      var ok = el.value.trim() && (n !== 'email' || /.+@.+\..+/.test(el.value));
+      el.style.borderColor = ok ? '' : '#f0563c';
+      if (!ok) bad = true;
+    });
+    if (bad) return;
+    form.hidden = true;
+    done.hidden = false;
+    done.scrollIntoView({ block: 'center', behavior: 'smooth' });
+  });
+})();
+</script>
+</body>
+</html>
