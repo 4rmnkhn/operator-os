@@ -1,51 +1,70 @@
 {
+  "_readme": "SCHEMA REFERENCE ONLY. Copy to prospects/<handle>.json, fill every value from the prospect's REAL data, then: node build.mjs prospects/<handle>.json. Never deploy this file and never invent a value - an empty/null field deletes its block.",
   "handle": "_example",
   "accent": "#3355ff",
-  "who": "For coaches selling a 3k-8k offer with organic content",
+  "who": "who their webinar is for, in their own words",
   "when": {
-    "day": "Thursday, Sep 4",
-    "time": "7:00 PM IST"
+    "day": "day, date",
+    "time": "time + zone"
   },
-  "headline": "Fill a webinar room from your existing audience in 14 days",
-  "subline": "You post daily and still hear crickets on launch day. The fix is a registration page that qualifies, not just collects. I will show you the exact page.",
+  "headline": "one outcome, with a number or concrete noun, from THEIR offer",
+  "subline": "the one thing in their audience's way + how the host fixes it",
   "objection": null,
+  "video": {
+    "id": null,
+    "caption": ""
+  },
+  "outliers": [
+    {
+      "id": null,
+      "caption": ""
+    },
+    {
+      "id": null,
+      "caption": ""
+    },
+    {
+      "id": null,
+      "caption": ""
+    }
+  ],
   "proof": {
     "tier": "C",
     "tierC": {
-      "text": "I will build the registration system live on the call, on a real page, so you can see every piece working before you copy it.",
+      "text": "what the host can honestly show today",
       "img": null
     }
   },
   "takeaways": [
     {
-      "t": "The 5-field signup that personalizes follow-up",
-      "d": "Copy the three qualification questions and the follow-up they feed."
+      "t": "takeaway 1",
+      "d": "a thing attendees can DO afterwards"
     },
     {
-      "t": "The proof tier you can fill honestly today",
-      "d": "Pick between your numbers, a client result, or showing the machine — and what to do while you have none."
+      "t": "takeaway 2",
+      "d": "specific enough a competitor could not paste it"
     },
     {
-      "t": "The 55% show-rate reminder sequence",
-      "d": "The exact timings that put 76 of 137 registrants in the room on a first run."
+      "t": "takeaway 3",
+      "d": "ideally with a number they can run themselves"
     }
   ],
   "bonus": null,
-  "confirm": {
-    "head": "Seat saved.",
-    "body": "The join link and a calendar invite go to your email. One reminder the morning of, one an hour before."
-  },
-  "host": {
-    "name": "Arman",
-    "line": "I build the systems info businesses run on. You will see them, not hear about them.",
-    "photo": null
-  },
   "fields": [
     "Name",
     "Email",
-    "What do you sell, and at what price?",
-    "Roughly where are you at per month?",
-    "The one thing you are stuck on"
+    "qualification q1",
+    "qualification q2",
+    "qualification q3"
   ],
-  "disclaimer": "Results discussed on this webinar are specific to the businesses named and are not a promise of your results. Not affiliated with Meta, Instagram or YouTube."
+  "confirm": {
+    "head": "confirmation headline",
+    "body": "only what actually happens next"
+  },
+  "host": {
+    "name": "HOST NAME",
+    "line": "what they actually do, plainly",
+    "photo": null
+  },
+  "disclaimer": "required if any result is stated"
 }

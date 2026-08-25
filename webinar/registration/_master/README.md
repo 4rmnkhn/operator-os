@@ -17,6 +17,18 @@ Prospect page (verdict labels stripped, unchosen tiers deleted, null blocks dele
 Output lands at `../<handle>/index.html`, live at
 `https://4rmnkhn.github.io/operator-os/webinar/registration/<handle>/` after push.
 
+## Video embeds
+
+`video.id` (the host's real video — the slot Noah's page proved) and `outliers[].id`
+(up to 3 of the host's recent top performers) take YouTube IDs in the prospect JSON and
+render as privacy-enhanced youtube-nocookie iframes, lazy-loaded, 16:9. Null deletes the
+section. `outliers_title` labels the strip (default "Recent uploads").
+Auto-pulling a channel's recent outliers can wire into the existing YouTube API tooling
+(05 Automation) later; the JSON path is the contract either way.
+
+`prospects/_example.json` is a SCHEMA REFERENCE only — neutral placeholders, never deployed,
+never filled with invented strategy.
+
 ## Rules carried from the template (not style choices)
 
 - No mandatory slot may require an asset the filler might not have. Proof is tiered A/B/C;

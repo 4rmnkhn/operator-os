@@ -24,6 +24,9 @@ a{color:var(--accent);text-decoration:none}
 .optlab{font-size:9.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--accent)}
 .opt{border:1px dashed #c2c7d6;border-radius:8px;padding:14px 15px}
 .card{background:#fff;border:1px solid var(--cardline);border-radius:9px;padding:16px 15px}
+.videowrap{position:relative;padding-top:56.25%;border-radius:11px;overflow:hidden;background:#10131c}
+.videowrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vidcap{font-size:12px;line-height:1.5;color:var(--muted);margin-top:9px}
 .slotbox{background:#e4e7f0;border-radius:8px;min-height:96px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;color:var(--muted);text-align:center;padding:10px}
 .section{padding-top:38px}
 .field{width:100%;border:1px solid var(--cardline);border-radius:7px;padding:14px 13px;font-size:14px;font-family:inherit;color:var(--ink);background:#fff;margin-bottom:10px;transition:border-color 150ms ease}
@@ -59,6 +62,24 @@ h2{font-size:clamp(22px,5vw,27px);font-weight:800;line-height:1.25;letter-spacin
   <p style="font-size:14.5px;line-height:1.65;color:var(--sub);margin:12px 0 0">{{objection.answer}}</p>
 </section>
 <!--END:hasObjection-->
+
+
+<!--IF:hasVideo-->
+<section class="wrap section">
+  <!--IF:_template-->
+  <div class="rule">
+    <span class="verdict" style="color:#a6abbb">optional</span>
+    <span class="rulenote">Only a REAL video of the host teaching or working. No video means delete the section. Never record filler to fill this slot.</span>
+  </div>
+  <!--END:_template-->
+  <!--IF:video.id-->
+  <div class="videowrap" style="margin-top:14px"><iframe src="https://www.youtube-nocookie.com/embed/{{video.id}}" title="{{video.caption}}" loading="lazy" allowfullscreen></iframe></div>
+  <div class="vidcap">{{video.caption}}</div>
+  <!--ELSE:video.id-->
+  <div class="slotbox" style="min-height:200px;margin-top:14px">⟦the host's real video — YouTube ID goes in the prospect JSON as video.id⟧</div>
+  <!--END:video.id-->
+</section>
+<!--END:hasVideo-->
 
 <section class="wrap section">
   <!--IF:_template-->
@@ -115,6 +136,32 @@ h2{font-size:clamp(22px,5vw,27px);font-weight:800;line-height:1.25;letter-spacin
   </div>
   <!--END:proof.showC-->
 </section>
+
+
+<!--IF:hasOutliers-->
+<section class="wrap section">
+  <!--IF:_template-->
+  <div class="rule">
+    <span class="verdict" style="color:#a6abbb">optional</span>
+    <span class="rulenote">The host's own recent top performers, pulled from their real channel the day the page is built. None worth showing means delete the section.</span>
+  </div>
+  <div class="slotbox" style="min-height:140px;margin-top:14px">⟦up to 3 of the host's recent outliers — YouTube IDs in the prospect JSON as outliers[].id⟧</div>
+  <!--END:_template-->
+  <!--IF:outliers.0.id-->
+  <div class="eyebrow" style="margin-top:14px">{{outliers_title}}</div>
+  <div class="videowrap" style="margin-top:12px"><iframe src="https://www.youtube-nocookie.com/embed/{{outliers.0.id}}" title="{{outliers.0.caption}}" loading="lazy" allowfullscreen></iframe></div>
+  <div class="vidcap">{{outliers.0.caption}}</div>
+  <!--END:outliers.0.id-->
+  <!--IF:outliers.1.id-->
+  <div class="videowrap" style="margin-top:14px"><iframe src="https://www.youtube-nocookie.com/embed/{{outliers.1.id}}" title="{{outliers.1.caption}}" loading="lazy" allowfullscreen></iframe></div>
+  <div class="vidcap">{{outliers.1.caption}}</div>
+  <!--END:outliers.1.id-->
+  <!--IF:outliers.2.id-->
+  <div class="videowrap" style="margin-top:14px"><iframe src="https://www.youtube-nocookie.com/embed/{{outliers.2.id}}" title="{{outliers.2.caption}}" loading="lazy" allowfullscreen></iframe></div>
+  <div class="vidcap">{{outliers.2.caption}}</div>
+  <!--END:outliers.2.id-->
+</section>
+<!--END:hasOutliers-->
 
 <section class="wrap section">
   <!--IF:_template-->
