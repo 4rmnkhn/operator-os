@@ -5,14 +5,35 @@
   "observation": "⟦one true line about his offer,\nhand written after actually looking⟧",
   "igHandle": "arman.lfg",
   "waNumber": "918109869009",
-  "video": { "id": null },
-  "videoQuote": "“My team and I built these because we want to work with you. There are two ways this goes: ⟦OPTION ONE⟧, or a monthly retainer. That is the whole menu.”",
+  "video": {
+    "id": null
+  },
+  "videoQuote": null,
   "gifts": [
-    { "t": "Registration page", "url": null },
-    { "t": "VIP upsell page", "url": null },
-    { "t": "OTO offer page", "url": null },
-    { "t": "Avatar research", "url": null },
-    { "t": "Ad scripts", "url": null },
-    { "t": "Reels pipeline", "url": null }
-  ]
+    {
+      "t": "Registration page",
+      "url": null
+    },
+    {
+      "t": "VIP upsell page",
+      "url": null
+    },
+    {
+      "t": "OTO offer page",
+      "url": null
+    },
+    {
+      "t": "Avatar research",
+      "url": null
+    },
+    {
+      "t": "Ad scripts",
+      "url": null
+    },
+    {
+      "t": "Reels pipeline",
+      "url": null
+    }
+  ],
+  "fromText": null
 }

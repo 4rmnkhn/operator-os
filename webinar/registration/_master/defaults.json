@@ -7,7 +7,8 @@
   "when": {
     "day": "⟦DAY, DATE⟧",
     "time": "⟦TIME, ZONE⟧",
-    "mode": "Live online"
+    "mode": "Live online",
+    "weekly": null
   },
   "headline": "⟦ONE OUTCOME. A thing that happens, with a number or a concrete noun in it. Not a topic.⟧",
   "subline": "⟦The one thing in their way, named. Then: and exactly how I fix it.⟧",

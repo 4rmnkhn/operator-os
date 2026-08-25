@@ -67,7 +67,7 @@ h2{font-size:clamp(22px,5vw,27px);font-weight:800;line-height:1.25;letter-spacin
 
 <header class="wrap" style="padding-top:30px;text-align:center">
   <div class="eyebrow">{{who}}</div>
-  <div style="font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#6b7183;margin-top:9px">{{when.day}} &nbsp;·&nbsp; {{when.time}} &nbsp;·&nbsp; {{when.mode}}</div>
+  <div style="font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#6b7183;margin-top:9px"><span data-weekly="{{when.weekly}}">{{when.day}}</span> &nbsp;·&nbsp; {{when.time}} &nbsp;·&nbsp; {{when.mode}}</div>
   <h1>{{headline}}</h1>
   <p style="font-size:15.5px;line-height:1.6;color:var(--sub);margin:16px 0 0">{{subline}}</p>
   <a href="#save" class="cta" style="margin-top:24px">{{cta}} <span class="arr">→</span></a>
@@ -215,7 +215,7 @@ h2{font-size:clamp(22px,5vw,27px);font-weight:800;line-height:1.25;letter-spacin
 
 <section class="wrap section" id="save" style="padding-bottom:40px;text-align:center">
   <div class="eyebrow" style="letter-spacing:.14em">Save your spot</div>
-  <div style="font-size:25px;font-weight:800;letter-spacing:-.03em;margin-top:10px">{{when.day}} <span style="color:var(--accent)">·</span> {{when.time}}</div>
+  <div style="font-size:25px;font-weight:800;letter-spacing:-.03em;margin-top:10px"><span data-weekly="{{when.weekly}}">{{when.day}}</span> <span style="color:var(--accent)">·</span> {{when.time}}</div>
 
   <form id="regform" style="background:#fff;border:1px solid var(--cardline);border-radius:11px;padding:22px 18px;margin-top:16px;text-align:left" novalidate>
     <input class="field" type="text" name="name" placeholder="{{fields.0}}" autocomplete="name" required>
@@ -302,6 +302,22 @@ h2{font-size:clamp(22px,5vw,27px);font-weight:800;line-height:1.25;letter-spacin
     });
   }, { threshold: 0.6 });
   els.forEach(function (el) { io.observe(el); });
+})();
+</script>
+<script>
+(function () {
+  // Recurring events: when.weekly names a weekday; replace the static day text with the
+  // next occurrence's real date. Static text stands if this never runs.
+  var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  [].slice.call(document.querySelectorAll('[data-weekly]')).forEach(function (el) {
+    var w = days.indexOf(el.getAttribute('data-weekly'));
+    if (w < 0) return;
+    var d = new Date();
+    var add = (w - d.getDay() + 7) % 7 || 7;
+    d.setDate(d.getDate() + add);
+    var m = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][d.getMonth()];
+    el.textContent = days[w] + ', ' + m + ' ' + d.getDate();
+  });
 })();
 </script>
 </body>

@@ -66,7 +66,7 @@ if (!handle) { console.error('prospect JSON needs a "handle"'); process.exit(1);
 if (p.registration) {
   const d = regData(p.registration, p, false);
   if (!d.meta || !p.registration.meta)
-    d.meta = { title: ((d.host && d.host.name) ? d.host.name + ' — ' : '') + 'Live webinar' };
+    d.meta = { title: ((d.host && d.host.name) ? d.host.name + ' - ' : '') + 'Live webinar' };
   render(join(root, 'webinar/registration/_master'), d, join(root, 'webinar/registration', handle, 'index.html'));
 }
 

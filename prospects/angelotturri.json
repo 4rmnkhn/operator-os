@@ -1,11 +1,12 @@
 {
-  "_sources": "Non-slot values trace to Angelo's published words, captured 2026-08-25: IG bio @angelotturri (12,764 followers) + go.angelosailaunchpad.com. His bio's free-training link 404s - that observation is the opener. Slots ⟦⟧ are his or Arman's.",
+  "_sources": "Every non-slot value traces to Angelo's own published words, captured 2026-08-25. IG @angelotturri (12,764 followers, bio: 'I sell AI to Businesses / Made 6 figures before I turned 20 y/o / Free training on how I did it'). YouTube @angelotturri (734 subs, 37 videos + 177 shorts, scraped via yt-dlp, raw JSON in session scratchpad). Numbers are HIS published claims, cited by video id. Audience lock: his titles address beginners who want to sell AI ('Any Beginner Can Make $15,152/week Selling AI Agents (just copy me)' 6YegJ5Bjw5A; 'no coding experience needed' OBGywi3WHfk). Slots are only what he or Arman must supply.",
   "handle": "angelotturri",
   "accent": "#d93a1e",
   "hub": {
     "clientName": "Angelo Turri",
     "firstName": "Angelo",
-    "observation": "⟦DRAFT for Arman's voice:⟧ Your bio promises a free training on how you did it. The link under it is dead - a 404, in front of 12,764 followers. So I built the page it should open to.",
+    "observation": "You already filmed the free training your bio promises. It is sitting on your YouTube. These pages give it somewhere to live.",
+    "fromText": "I'm Arman. I run growth for info businesses. The last one I ran went to consistent $50k months with a team of three.\nI made these because I want to work with you. Showing the work beats describing it.\nIf we work together, it is ⟦OPTION ONE⟧ or a monthly retainer.",
     "gifts": [
       { "t": "Registration page", "url": null },
       { "t": "VIP upsell page", "url": null },
@@ -16,40 +17,41 @@
     ]
   },
   "registration": {
-    "who": "For business owners who want an AI engine that sells for them",
-    "when": { "day": "⟦DAY, DATE⟧", "time": "⟦TIME, ZONE⟧" },
-    "headline": "The exact system I use to sell AI to businesses — the one that made six figures before I turned 20",
-    "subline": "Most businesses know AI should be winning them customers. Almost none have an engine that actually does it. This training shows the one I install.",
+    "who": "For beginners who want to sell AI to businesses",
+    "when": { "day": "⟦DAY, DATE⟧", "time": "⟦TIME, ZONE⟧", "weekly": null },
+    "headline": "The boring AI business that pays me $48,000 a month, shown start to finish",
+    "subline": "I sell two AI systems to businesses. In this class I build both in front of you. No code.",
     "objection": {
-      "head": "Six figures before 20 sounds like a story.",
-      "answer": "It should. That is why the training shows the system itself, live, not slides about it."
+      "head": "A 20 year old making $48,000 a month sounds made up.",
+      "answer": "It should. So I show the dashboard live on the call, not slides about it."
     },
+    "video": { "id": "ZZpBv7xeYWk", "caption": "My Business is Boring, But Makes me $48,000/Month. His most watched video, 4.6x his subscriber count." },
     "proof": {
       "tier": "A",
       "tierA": {
-        "line": "Six figures selling AI to businesses, before turning 20",
-        "before": "⟦starting point⟧", "before_when": "⟦when⟧",
-        "after": "⟦the real number⟧", "after_when": "⟦when⟧",
-        "limit": "⟦Angelo names the limit of the number in his own words, and offers to show the live source on the call.⟧",
+        "line": "From a dorm room to $48,000 a month, in 10 months",
+        "before": "a dorm", "before_when": "10 months ago",
+        "after": "$48,000", "after_when": "per month, now",
+        "limit": "⟦Angelo states the limit of the number in his own words: gross or profit, which months, and offers the live dashboard on the call.⟧",
         "img": null, "vid": null
       }
     },
     "takeaways": [
-      { "t": "The AI acquisition engine, end to end", "d": "How the engine captures and qualifies high-ticket leads on autopilot — the same build his agency installs." },
-      { "t": "Where AI cuts your overhead first", "d": "The arbitrage read: which backend workflows to hand to AI this month, and which to leave alone." },
-      { "t": "Making your existing sales process AI-ready", "d": "How to integrate AI into the process you already run — without retraining your team from zero." }
+      { "t": "The two AI agents businesses pay for", "d": "The only two systems he sells, and what each one costs a client. From the $48,583 month breakdown." },
+      { "t": "The cold call that closed $9,500", "d": "A real close, played and broken down line by line. Not a script template, the actual call." },
+      { "t": "What to sell instead of AI websites", "d": "Why the obvious first offer stalls, and the boring one that gets paid." }
     ],
     "bonus": null,
-    "fields": ["Name", "Email", "What does your business sell?", "Roughly where is revenue today?", "Where do you think AI should be winning you customers?"],
+    "fields": ["Name", "Email", "What do you do right now?", "Have you tried selling AI before?", "The one thing stopping you from starting"],
     "confirm": {
-      "head": "⟦Confirmation headline - only what actually happens next⟧",
-      "body": "⟦Depends on Angelo's delivery: live date + link by email, or instant access. Nothing he has not wired.⟧"
+      "head": "⟦Confirmation headline. Only what actually happens next.⟧",
+      "body": "⟦Angelo's delivery decides this: live date and link by email, or instant access. Nothing he has not wired.⟧"
     },
     "host": {
       "name": "Angelo Turri",
-      "line": "I sell AI to businesses. This training shows the system I use to do it.",
+      "line": "I sell AI to businesses. This class shows the system I use.",
       "photo": null
     },
-    "disclaimer": "⟦Required once any number is stated. Names the platforms he is not affiliated with.⟧"
+    "disclaimer": "These numbers are mine, from my business, and they are not a promise of yours. Most people who watch a class earn nothing. Not affiliated with YouTube or Instagram."
   }
 }
