@@ -35,5 +35,6 @@
       "url": null
     }
   ],
-  "fromText": null
+  "fromText": null,
+  "fromLabel": "who this is from"
 }

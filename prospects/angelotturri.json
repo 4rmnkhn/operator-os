@@ -5,47 +5,91 @@
   "hub": {
     "clientName": "Angelo Turri",
     "firstName": "Angelo",
-    "observation": "You already filmed the free training your bio promises. It is sitting on your YouTube. These pages give it somewhere to live.",
-    "fromText": "I'm Arman. I run growth for info businesses. The last one I ran went to consistent $50k months with a team of three.\nI made these because I want to work with you. Showing the work beats describing it.\nIf we work together, it is ⟦OPTION ONE⟧ or a monthly retainer.",
+    "observation": "I'm Arman. My team and I built this for you.\nA webinar funnel, the organic system, and the paid one.\nWe want to work with you.",
+    "fromText": "The last business we ran this system for went to consistent $50k months with a three person team.\nIf we work together, it is ⟦OPTION ONE⟧ or a monthly retainer.",
     "gifts": [
-      { "t": "Registration page", "url": null },
-      { "t": "VIP upsell page", "url": null },
-      { "t": "OTO offer page", "url": null },
-      { "t": "Avatar research", "url": null },
-      { "t": "Ad scripts", "url": null },
-      { "t": "Reels pipeline", "url": "https://laser-smartphone-0d9.notion.site/3c4916f8691b815b8ce1c008a384361e" }
-    ]
+      {
+        "t": "Registration page",
+        "url": null
+      },
+      {
+        "t": "VIP upsell page",
+        "url": null
+      },
+      {
+        "t": "OTO offer page",
+        "url": null
+      },
+      {
+        "t": "Avatar research",
+        "url": null
+      },
+      {
+        "t": "Ad scripts",
+        "url": null
+      },
+      {
+        "t": "Reels pipeline",
+        "url": "https://laser-smartphone-0d9.notion.site/3c4916f8691b815b8ce1c008a384361e"
+      }
+    ],
+    "fromLabel": "proof, and the terms"
   },
   "registration": {
     "who": "For beginners who want to sell AI to businesses",
-    "when": { "day": "⟦DAY, DATE⟧", "time": "⟦TIME, ZONE⟧", "weekly": null },
+    "when": {
+      "day": "Wednesday, Sep 9",
+      "time": "7:00 PM ET",
+      "weekly": null
+    },
     "headline": "The boring AI business that pays me $48,000 a month, shown start to finish",
     "subline": "I sell two AI systems to businesses. In this class I build both in front of you. No code.",
     "objection": {
       "head": "A 20 year old making $48,000 a month sounds made up.",
       "answer": "It should. So I show the dashboard live on the call, not slides about it."
     },
-    "video": { "id": "ZZpBv7xeYWk", "caption": "My Business is Boring, But Makes me $48,000/Month. His most watched video, 4.6x his subscriber count." },
+    "video": {
+      "id": "ZZpBv7xeYWk",
+      "caption": "My Business is Boring, But Makes me $48,000/Month. His most watched video, 4.6x his subscriber count."
+    },
     "proof": {
       "tier": "A",
       "tierA": {
         "line": "From a dorm room to $48,000 a month, in 10 months",
-        "before": "a dorm", "before_when": "10 months ago",
-        "after": "$48,000", "after_when": "per month, now",
+        "before": "a dorm",
+        "before_when": "10 months ago",
+        "after": "$48,000",
+        "after_when": "per month, now",
         "limit": "⟦Angelo states the limit of the number in his own words: gross or profit, which months, and offers the live dashboard on the call.⟧",
-        "img": null, "vid": null
+        "img": null,
+        "vid": null
       }
     },
     "takeaways": [
-      { "t": "The two AI agents businesses pay for", "d": "The only two systems he sells, and what each one costs a client. From the $48,583 month breakdown." },
-      { "t": "The cold call that closed $9,500", "d": "A real close, played and broken down line by line. Not a script template, the actual call." },
-      { "t": "What to sell instead of AI websites", "d": "Why the obvious first offer stalls, and the boring one that gets paid." }
+      {
+        "t": "The two AI agents businesses pay for",
+        "d": "The only two systems he sells, and what each one costs a client. From the $48,583 month breakdown."
+      },
+      {
+        "t": "The cold call that closed $9,500",
+        "d": "A real close, played and broken down line by line. Not a script template, the actual call."
+      },
+      {
+        "t": "What to sell instead of AI websites",
+        "d": "Why the obvious first offer stalls, and the boring one that gets paid."
+      }
     ],
     "bonus": null,
-    "fields": ["Name", "Email", "What do you do right now?", "Have you tried selling AI before?", "The one thing stopping you from starting"],
+    "fields": [
+      "Name",
+      "Email",
+      "What do you do right now?",
+      "Have you tried selling AI before?",
+      "The one thing stopping you from starting"
+    ],
     "confirm": {
-      "head": "⟦Confirmation headline. Only what actually happens next.⟧",
-      "body": "⟦Angelo's delivery decides this: live date and link by email, or instant access. Nothing he has not wired.⟧"
+      "head": "Seat saved.",
+      "body": "The join link and a calendar invite go to your email. One reminder the morning of, one an hour before."
     },
     "host": {
       "name": "Angelo Turri",
