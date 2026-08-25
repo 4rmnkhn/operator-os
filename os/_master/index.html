@@ -31,9 +31,20 @@ a.grow:hover{background:#e6e3dd;color:var(--ink)}
 .pend{font-size:10px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--soft)}
 .sec{}
 @keyframes rise{from{opacity:0;transform:translateY(12px)}}
+@keyframes lrise{from{transform:translateY(.32em)}}
+@keyframes dpop{from{transform:translateY(.32em) scale(.6)}}
+@keyframes sweep{from{transform:scaleX(0)}}
+.ltr,.dot{display:inline-block}
+.dot{color:var(--accent)}
+.eyelab.gl{position:relative;display:inline-block}
+.eyelab.gl::after{content:"";position:absolute;left:0;bottom:-6px;height:1px;width:100%;background:var(--ink)}
 @media (prefers-reduced-motion:no-preference){
+  .ltr{animation:lrise .5s cubic-bezier(.2,.7,.3,1) both}
+  .dot{animation:dpop .45s cubic-bezier(.2,.7,.3,1) both}
   @supports (animation-timeline: view()){
     .sec{animation:rise ease both;animation-timeline:view();animation-range:entry 0% entry 30%}
+    .grow{animation:rise ease both;animation-timeline:view();animation-range:entry 0% entry 40%}
+    .eyelab.gl::after{animation:sweep .6s ease both;animation-timeline:view();animation-range:entry 0% entry 60%}
   }
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
@@ -48,7 +59,7 @@ a.grow:hover{background:#e6e3dd;color:var(--ink)}
   </div>
 
   <div style="padding:54px 26px 0">
-    <div style="font-size:clamp(64px,21vw,88px);font-weight:900;line-height:.88;letter-spacing:-.05em">{{firstName}}<span style="color:var(--accent)">.</span></div>
+    <div style="font-size:clamp(64px,21vw,88px);font-weight:900;line-height:.88;letter-spacing:-.05em">{{firstNameHTML}}<span class="dot" style="animation-delay:{{dotDelay}}ms">.</span></div>
     <div style="height:1px;background:var(--ink);margin-top:20px"></div>
     <div style="font-size:19px;font-weight:500;letter-spacing:-.015em;margin-top:14px">Here are a few things we built for you.</div>
   </div>
@@ -60,12 +71,12 @@ a.grow:hover{background:#e6e3dd;color:var(--ink)}
   <!--IF:fromText-->
   <div class="sec" style="padding:64px 26px 0">
     <div class="eyelab">{{fromLabel}}</div>
-    <div style="font-size:15px;line-height:1.75;color:var(--body);margin-top:14px;max-width:320px;white-space:pre-line">{{fromText}}</div>
+    <div style="font-size:15px;line-height:1.75;color:var(--body);margin-top:14px;max-width:320px;white-space:pre-line" data-receipt>{{fromText}}</div>
   </div>
   <!--END:fromText-->
 
   <div class="sec" style="padding:84px 26px 0">
-    <div class="eyelab">{{paidLabel}}</div>
+    <div class="eyelab gl">{{paidLabel}}</div>
     <div style="margin-top:14px;border-bottom:1px solid var(--line)">
       <!--IF:paid.0.t--><!--IF:paid.0.url--><a class="grow" href="{{paid.0.url}}"><span class="gnum">{{paid.0.n}}</span><span class="gtit">{{paid.0.t}}</span><span class="gopen">open<span class="ar">&#8594;</span></span></a><!--ELSE:paid.0.url--><div class="grow"><span class="gnum">{{paid.0.n}}</span><span class="gtit">{{paid.0.t}}</span><span class="pend">in build</span></div><!--END:paid.0.url--><!--END:paid.0.t-->
       <!--IF:paid.1.t--><!--IF:paid.1.url--><a class="grow" href="{{paid.1.url}}"><span class="gnum">{{paid.1.n}}</span><span class="gtit">{{paid.1.t}}</span><span class="gopen">open<span class="ar">&#8594;</span></span></a><!--ELSE:paid.1.url--><div class="grow"><span class="gnum">{{paid.1.n}}</span><span class="gtit">{{paid.1.t}}</span><span class="pend">in build</span></div><!--END:paid.1.url--><!--END:paid.1.t-->
@@ -74,7 +85,7 @@ a.grow:hover{background:#e6e3dd;color:var(--ink)}
       <!--IF:paid.4.t--><!--IF:paid.4.url--><a class="grow" href="{{paid.4.url}}"><span class="gnum">{{paid.4.n}}</span><span class="gtit">{{paid.4.t}}</span><span class="gopen">open<span class="ar">&#8594;</span></span></a><!--ELSE:paid.4.url--><div class="grow"><span class="gnum">{{paid.4.n}}</span><span class="gtit">{{paid.4.t}}</span><span class="pend">in build</span></div><!--END:paid.4.url--><!--END:paid.4.t-->
       <!--IF:paid.5.t--><!--IF:paid.5.url--><a class="grow" href="{{paid.5.url}}"><span class="gnum">{{paid.5.n}}</span><span class="gtit">{{paid.5.t}}</span><span class="gopen">open<span class="ar">&#8594;</span></span></a><!--ELSE:paid.5.url--><div class="grow"><span class="gnum">{{paid.5.n}}</span><span class="gtit">{{paid.5.t}}</span><span class="pend">in build</span></div><!--END:paid.5.url--><!--END:paid.5.t-->
     </div>
-    <div class="eyelab" style="margin-top:44px">{{organicLabel}}</div>
+    <div class="eyelab gl" style="margin-top:44px">{{organicLabel}}</div>
     <div style="margin-top:14px;border-bottom:1px solid var(--line)">
       <!--IF:organic.0.t--><!--IF:organic.0.url--><a class="grow" href="{{organic.0.url}}"><span class="gnum">{{organic.0.n}}</span><span class="gtit">{{organic.0.t}}</span><span class="gopen">open<span class="ar">&#8594;</span></span></a><!--ELSE:organic.0.url--><div class="grow"><span class="gnum">{{organic.0.n}}</span><span class="gtit">{{organic.0.t}}</span><span class="pend">in build</span></div><!--END:organic.0.url--><!--END:organic.0.t-->
       <!--IF:organic.1.t--><!--IF:organic.1.url--><a class="grow" href="{{organic.1.url}}"><span class="gnum">{{organic.1.n}}</span><span class="gtit">{{organic.1.t}}</span><span class="gopen">open<span class="ar">&#8594;</span></span></a><!--ELSE:organic.1.url--><div class="grow"><span class="gnum">{{organic.1.n}}</span><span class="gtit">{{organic.1.t}}</span><span class="pend">in build</span></div><!--END:organic.1.url--><!--END:organic.1.t-->
@@ -147,5 +158,31 @@ a.grow:hover{background:#e6e3dd;color:var(--ink)}
   </div>
 
 </div>
+<script>
+(function () {
+  if (!('IntersectionObserver' in window)) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var el = document.querySelector('[data-receipt]');
+  if (!el) return;
+  var m = el.textContent.match(/\$(\d+)k/);
+  if (!m) return;
+  var final = m[0], target = +m[1];
+  el.innerHTML = el.innerHTML.replace(final, '<span data-cnt>' + final + '</span>');
+  var s = el.querySelector('[data-cnt]');
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      io.disconnect();
+      var t0 = performance.now();
+      (function step(t) {
+        var p = Math.min((t - t0) / 800, 1);
+        s.textContent = '$' + Math.round(target * (1 - Math.pow(1 - p, 3))) + 'k';
+        if (p < 1) requestAnimationFrame(step); else s.textContent = final;
+      })(t0);
+    });
+  }, { threshold: 0.7 });
+  io.observe(s);
+})();
+</script>
 </body>
 </html>

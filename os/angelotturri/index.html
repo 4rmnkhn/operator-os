@@ -31,9 +31,20 @@ a.grow:hover{background:#e6e3dd;color:var(--ink)}
 .pend{font-size:10px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--soft)}
 .sec{}
 @keyframes rise{from{opacity:0;transform:translateY(12px)}}
+@keyframes lrise{from{transform:translateY(.32em)}}
+@keyframes dpop{from{transform:translateY(.32em) scale(.6)}}
+@keyframes sweep{from{transform:scaleX(0)}}
+.ltr,.dot{display:inline-block}
+.dot{color:var(--accent)}
+.eyelab.gl{position:relative;display:inline-block}
+.eyelab.gl::after{content:"";position:absolute;left:0;bottom:-6px;height:1px;width:100%;background:var(--ink)}
 @media (prefers-reduced-motion:no-preference){
+  .ltr{animation:lrise .5s cubic-bezier(.2,.7,.3,1) both}
+  .dot{animation:dpop .45s cubic-bezier(.2,.7,.3,1) both}
   @supports (animation-timeline: view()){
     .sec{animation:rise ease both;animation-timeline:view();animation-range:entry 0% entry 30%}
+    .grow{animation:rise ease both;animation-timeline:view();animation-range:entry 0% entry 40%}
+    .eyelab.gl::after{animation:sweep .6s ease both;animation-timeline:view();animation-range:entry 0% entry 60%}
   }
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
@@ -48,7 +59,7 @@ a.grow:hover{background:#e6e3dd;color:var(--ink)}
   </div>
 
   <div style="padding:54px 26px 0">
-    <div style="font-size:clamp(64px,21vw,88px);font-weight:900;line-height:.88;letter-spacing:-.05em">Angelo<span style="color:var(--accent)">.</span></div>
+    <div style="font-size:clamp(64px,21vw,88px);font-weight:900;line-height:.88;letter-spacing:-.05em"><span class="ltr" style="animation-delay:0ms">A</span><span class="ltr" style="animation-delay:55ms">n</span><span class="ltr" style="animation-delay:110ms">g</span><span class="ltr" style="animation-delay:165ms">e</span><span class="ltr" style="animation-delay:220ms">l</span><span class="ltr" style="animation-delay:275ms">o</span><span class="dot" style="animation-delay:470ms">.</span></div>
     <div style="height:1px;background:var(--ink);margin-top:20px"></div>
     <div style="font-size:19px;font-weight:500;letter-spacing:-.015em;margin-top:14px">Here are a few things we built for you.</div>
   </div>
@@ -62,12 +73,12 @@ We want to work with you.</div>
   
   <div class="sec" style="padding:64px 26px 0">
     <div class="eyelab">the receipt</div>
-    <div style="font-size:15px;line-height:1.75;color:var(--body);margin-top:14px;max-width:320px;white-space:pre-line">The last business we ran, we ran the organic side. Three consecutive $⟦NUMBER⟧k months.</div>
+    <div style="font-size:15px;line-height:1.75;color:var(--body);margin-top:14px;max-width:320px;white-space:pre-line" data-receipt>The last business we ran, we ran the organic side. Three consecutive $50k months.</div>
   </div>
   
 
   <div class="sec" style="padding:84px 26px 0">
-    <div class="eyelab">paid · the webinar funnel</div>
+    <div class="eyelab gl">paid · the webinar funnel</div>
     <div style="margin-top:14px;border-bottom:1px solid var(--line)">
       <a class="grow" href="../../webinar/registration/angelotturri/"><span class="gnum">01</span><span class="gtit">Registration page</span><span class="gopen">open<span class="ar">&#8594;</span></span></a>
       <div class="grow"><span class="gnum">02</span><span class="gtit">VIP upsell page</span><span class="pend">in build</span></div>
@@ -76,7 +87,7 @@ We want to work with you.</div>
       <div class="grow"><span class="gnum">05</span><span class="gtit">Ad scripts</span><span class="pend">in build</span></div>
       
     </div>
-    <div class="eyelab" style="margin-top:44px">organic</div>
+    <div class="eyelab gl" style="margin-top:44px">organic</div>
     <div style="margin-top:14px;border-bottom:1px solid var(--line)">
       <a class="grow" href="https://laser-smartphone-0d9.notion.site/3c4916f8691b815b8ce1c008a384361e"><span class="gnum">06</span><span class="gtit">Reels pipeline</span><span class="gopen">open<span class="ar">&#8594;</span></span></a>
       <a class="grow" href="https://laser-smartphone-0d9.notion.site/3c5916f8691b81a9acf5c6fab48d8aa3"><span class="gnum">07</span><span class="gtit">YouTube outlier library</span><span class="gopen">open<span class="ar">&#8594;</span></span></a>
@@ -138,5 +149,31 @@ We want to work with you.</div>
   </div>
 
 </div>
+<script>
+(function () {
+  if (!('IntersectionObserver' in window)) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var el = document.querySelector('[data-receipt]');
+  if (!el) return;
+  var m = el.textContent.match(/\$(\d+)k/);
+  if (!m) return;
+  var final = m[0], target = +m[1];
+  el.innerHTML = el.innerHTML.replace(final, '<span data-cnt>' + final + '</span>');
+  var s = el.querySelector('[data-cnt]');
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      io.disconnect();
+      var t0 = performance.now();
+      (function step(t) {
+        var p = Math.min((t - t0) / 800, 1);
+        s.textContent = '$' + Math.round(target * (1 - Math.pow(1 - p, 3))) + 'k';
+        if (p < 1) requestAnimationFrame(step); else s.textContent = final;
+      })(t0);
+    });
+  }, { threshold: 0.7 });
+  io.observe(s);
+})();
+</script>
 </body>
 </html>
