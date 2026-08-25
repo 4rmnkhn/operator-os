@@ -23,6 +23,11 @@ a:hover{color:var(--ink)}
 .crow:hover{background:#1e1c18}
 .eyelab{font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
 .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.grow{display:flex;align-items:baseline;gap:14px;padding:16px 2px;border-top:1px solid var(--line);color:var(--ink);transition:background 200ms ease}
+a.grow:hover{background:#e6e3dd;color:var(--ink)}
+.gnum{font-size:10px;font-weight:600;color:var(--soft);letter-spacing:.1em;flex:0 0 22px}
+.gtit{font-size:16px;font-weight:500;letter-spacing:-.015em;flex:1}
+.gopen{font-size:13px;font-weight:500;color:var(--accent);display:inline-flex;align-items:center;gap:6px;border-bottom:1px solid currentColor;padding-bottom:2px}
 .pend{font-size:10px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--soft)}
 .sec{}
 @keyframes rise{from{opacity:0;transform:translateY(12px)}}
@@ -52,38 +57,29 @@ a:hover{color:var(--ink)}
     <div style="font-size:14px;line-height:1.7;text-align:right;color:var(--soft);max-width:245px;white-space:pre-line">{{observation}}</div>
   </div>
 
+  <!--IF:fromText-->
+  <div class="sec" style="padding:64px 26px 0">
+    <div class="eyelab">{{fromLabel}}</div>
+    <div style="font-size:15px;line-height:1.75;color:var(--body);margin-top:14px;max-width:320px;white-space:pre-line">{{fromText}}</div>
+  </div>
+  <!--END:fromText-->
+
   <div class="sec" style="padding:84px 26px 0">
-    <div class="grid2" style="border-top:1px solid var(--line)">
-      <!--IF:gifts.0.t--><div class="cell" style="padding:20px 14px 22px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);min-height:128px;display:flex;flex-direction:column">
-        <div style="font-size:10px;font-weight:600;color:var(--soft);letter-spacing:.1em">01</div>
-        <div style="font-size:16px;font-weight:500;line-height:1.25;letter-spacing:-.015em;margin-top:12px;margin-bottom:auto">{{gifts.0.t}}</div>
-        <!--IF:gifts.0.url--><a class="lnk" href="{{gifts.0.url}}" style="font-size:13px;font-weight:500;margin-top:16px;align-self:flex-start">open<span class="ar">&#8594;</span></a><!--ELSE:gifts.0.url--><span class="pend" style="margin-top:16px">in build</span><!--END:gifts.0.url-->
-      </div><!--END:gifts.0.t-->
-      <!--IF:gifts.1.t--><div class="cell" style="padding:20px 14px 22px;border-bottom:1px solid var(--line);min-height:128px;display:flex;flex-direction:column">
-        <div style="font-size:10px;font-weight:600;color:var(--soft);letter-spacing:.1em">02</div>
-        <div style="font-size:16px;font-weight:500;line-height:1.25;letter-spacing:-.015em;margin-top:12px;margin-bottom:auto">{{gifts.1.t}}</div>
-        <!--IF:gifts.1.url--><a class="lnk" href="{{gifts.1.url}}" style="font-size:13px;font-weight:500;margin-top:16px;align-self:flex-start">open<span class="ar">&#8594;</span></a><!--ELSE:gifts.1.url--><span class="pend" style="margin-top:16px">in build</span><!--END:gifts.1.url-->
-      </div><!--END:gifts.1.t-->
-      <!--IF:gifts.2.t--><div class="cell" style="padding:20px 14px 22px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);min-height:128px;display:flex;flex-direction:column">
-        <div style="font-size:10px;font-weight:600;color:var(--soft);letter-spacing:.1em">03</div>
-        <div style="font-size:16px;font-weight:500;line-height:1.25;letter-spacing:-.015em;margin-top:12px;margin-bottom:auto">{{gifts.2.t}}</div>
-        <!--IF:gifts.2.url--><a class="lnk" href="{{gifts.2.url}}" style="font-size:13px;font-weight:500;margin-top:16px;align-self:flex-start">open<span class="ar">&#8594;</span></a><!--ELSE:gifts.2.url--><span class="pend" style="margin-top:16px">in build</span><!--END:gifts.2.url-->
-      </div><!--END:gifts.2.t-->
-      <!--IF:gifts.3.t--><div class="cell" style="padding:20px 14px 22px;border-bottom:1px solid var(--line);min-height:128px;display:flex;flex-direction:column">
-        <div style="font-size:10px;font-weight:600;color:var(--soft);letter-spacing:.1em">04</div>
-        <div style="font-size:16px;font-weight:500;line-height:1.25;letter-spacing:-.015em;margin-top:12px;margin-bottom:auto">{{gifts.3.t}}</div>
-        <!--IF:gifts.3.url--><a class="lnk" href="{{gifts.3.url}}" style="font-size:13px;font-weight:500;margin-top:16px;align-self:flex-start">open<span class="ar">&#8594;</span></a><!--ELSE:gifts.3.url--><span class="pend" style="margin-top:16px">in build</span><!--END:gifts.3.url-->
-      </div><!--END:gifts.3.t-->
-      <!--IF:gifts.4.t--><div class="cell" style="padding:20px 14px 22px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);min-height:128px;display:flex;flex-direction:column">
-        <div style="font-size:10px;font-weight:600;color:var(--soft);letter-spacing:.1em">05</div>
-        <div style="font-size:16px;font-weight:500;line-height:1.25;letter-spacing:-.015em;margin-top:12px;margin-bottom:auto">{{gifts.4.t}}</div>
-        <!--IF:gifts.4.url--><a class="lnk" href="{{gifts.4.url}}" style="font-size:13px;font-weight:500;margin-top:16px;align-self:flex-start">open<span class="ar">&#8594;</span></a><!--ELSE:gifts.4.url--><span class="pend" style="margin-top:16px">in build</span><!--END:gifts.4.url-->
-      </div><!--END:gifts.4.t-->
-      <!--IF:gifts.5.t--><div class="cell" style="padding:20px 14px 22px;border-bottom:1px solid var(--line);min-height:128px;display:flex;flex-direction:column">
-        <div style="font-size:10px;font-weight:600;color:var(--soft);letter-spacing:.1em">06</div>
-        <div style="font-size:16px;font-weight:500;line-height:1.25;letter-spacing:-.015em;margin-top:12px;margin-bottom:auto">{{gifts.5.t}}</div>
-        <!--IF:gifts.5.url--><a class="lnk" href="{{gifts.5.url}}" style="font-size:13px;font-weight:500;margin-top:16px;align-self:flex-start">open<span class="ar">&#8594;</span></a><!--ELSE:gifts.5.url--><span class="pend" style="margin-top:16px">in build</span><!--END:gifts.5.url-->
-      </div><!--END:gifts.5.t-->
+    <div class="eyelab">{{paidLabel}}</div>
+    <div style="margin-top:14px;border-bottom:1px solid var(--line)">
+      <!--IF:paid.0.t--><!--IF:paid.0.url--><a class="grow" href="{{paid.0.url}}"><span class="gnum">{{paid.0.n}}</span><span class="gtit">{{paid.0.t}}</span><span class="gopen">open<span class="ar">&#8594;</span></span></a><!--ELSE:paid.0.url--><div class="grow"><span class="gnum">{{paid.0.n}}</span><span class="gtit">{{paid.0.t}}</span><span class="pend">in build</span></div><!--END:paid.0.url--><!--END:paid.0.t-->
+      <!--IF:paid.1.t--><!--IF:paid.1.url--><a class="grow" href="{{paid.1.url}}"><span class="gnum">{{paid.1.n}}</span><span class="gtit">{{paid.1.t}}</span><span class="gopen">open<span class="ar">&#8594;</span></span></a><!--ELSE:paid.1.url--><div class="grow"><span class="gnum">{{paid.1.n}}</span><span class="gtit">{{paid.1.t}}</span><span class="pend">in build</span></div><!--END:paid.1.url--><!--END:paid.1.t-->
+      <!--IF:paid.2.t--><!--IF:paid.2.url--><a class="grow" href="{{paid.2.url}}"><span class="gnum">{{paid.2.n}}</span><span class="gtit">{{paid.2.t}}</span><span class="gopen">open<span class="ar">&#8594;</span></span></a><!--ELSE:paid.2.url--><div class="grow"><span class="gnum">{{paid.2.n}}</span><span class="gtit">{{paid.2.t}}</span><span class="pend">in build</span></div><!--END:paid.2.url--><!--END:paid.2.t-->
+      <!--IF:paid.3.t--><!--IF:paid.3.url--><a class="grow" href="{{paid.3.url}}"><span class="gnum">{{paid.3.n}}</span><span class="gtit">{{paid.3.t}}</span><span class="gopen">open<span class="ar">&#8594;</span></span></a><!--ELSE:paid.3.url--><div class="grow"><span class="gnum">{{paid.3.n}}</span><span class="gtit">{{paid.3.t}}</span><span class="pend">in build</span></div><!--END:paid.3.url--><!--END:paid.3.t-->
+      <!--IF:paid.4.t--><!--IF:paid.4.url--><a class="grow" href="{{paid.4.url}}"><span class="gnum">{{paid.4.n}}</span><span class="gtit">{{paid.4.t}}</span><span class="gopen">open<span class="ar">&#8594;</span></span></a><!--ELSE:paid.4.url--><div class="grow"><span class="gnum">{{paid.4.n}}</span><span class="gtit">{{paid.4.t}}</span><span class="pend">in build</span></div><!--END:paid.4.url--><!--END:paid.4.t-->
+      <!--IF:paid.5.t--><!--IF:paid.5.url--><a class="grow" href="{{paid.5.url}}"><span class="gnum">{{paid.5.n}}</span><span class="gtit">{{paid.5.t}}</span><span class="gopen">open<span class="ar">&#8594;</span></span></a><!--ELSE:paid.5.url--><div class="grow"><span class="gnum">{{paid.5.n}}</span><span class="gtit">{{paid.5.t}}</span><span class="pend">in build</span></div><!--END:paid.5.url--><!--END:paid.5.t-->
+    </div>
+    <div class="eyelab" style="margin-top:44px">{{organicLabel}}</div>
+    <div style="margin-top:14px;border-bottom:1px solid var(--line)">
+      <!--IF:organic.0.t--><!--IF:organic.0.url--><a class="grow" href="{{organic.0.url}}"><span class="gnum">{{organic.0.n}}</span><span class="gtit">{{organic.0.t}}</span><span class="gopen">open<span class="ar">&#8594;</span></span></a><!--ELSE:organic.0.url--><div class="grow"><span class="gnum">{{organic.0.n}}</span><span class="gtit">{{organic.0.t}}</span><span class="pend">in build</span></div><!--END:organic.0.url--><!--END:organic.0.t-->
+      <!--IF:organic.1.t--><!--IF:organic.1.url--><a class="grow" href="{{organic.1.url}}"><span class="gnum">{{organic.1.n}}</span><span class="gtit">{{organic.1.t}}</span><span class="gopen">open<span class="ar">&#8594;</span></span></a><!--ELSE:organic.1.url--><div class="grow"><span class="gnum">{{organic.1.n}}</span><span class="gtit">{{organic.1.t}}</span><span class="pend">in build</span></div><!--END:organic.1.url--><!--END:organic.1.t-->
+      <!--IF:organic.2.t--><!--IF:organic.2.url--><a class="grow" href="{{organic.2.url}}"><span class="gnum">{{organic.2.n}}</span><span class="gtit">{{organic.2.t}}</span><span class="gopen">open<span class="ar">&#8594;</span></span></a><!--ELSE:organic.2.url--><div class="grow"><span class="gnum">{{organic.2.n}}</span><span class="gtit">{{organic.2.t}}</span><span class="pend">in build</span></div><!--END:organic.2.url--><!--END:organic.2.t-->
+      <!--IF:organic.3.t--><!--IF:organic.3.url--><a class="grow" href="{{organic.3.url}}"><span class="gnum">{{organic.3.n}}</span><span class="gtit">{{organic.3.t}}</span><span class="gopen">open<span class="ar">&#8594;</span></span></a><!--ELSE:organic.3.url--><div class="grow"><span class="gnum">{{organic.3.n}}</span><span class="gtit">{{organic.3.t}}</span><span class="pend">in build</span></div><!--END:organic.3.url--><!--END:organic.3.t-->
     </div>
   </div>
 
@@ -121,13 +117,6 @@ a:hover{color:var(--ink)}
       </div>
     </div>
   </div>
-
-  <!--IF:fromText-->
-  <div class="sec" style="padding:80px 26px 0">
-    <div class="eyelab">{{fromLabel}}</div>
-    <div style="font-size:15px;line-height:1.75;color:var(--body);margin-top:14px;max-width:320px;white-space:pre-line">{{fromText}}</div>
-  </div>
-  <!--END:fromText-->
 
   <!--IF:hasMessage-->
   <div class="sec" style="padding:72px 26px 0">

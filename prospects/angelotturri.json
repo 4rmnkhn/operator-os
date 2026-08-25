@@ -5,35 +5,48 @@
   "hub": {
     "clientName": "Angelo Turri",
     "firstName": "Angelo",
-    "observation": "I'm Arman. My team and I built this for you.\nA webinar funnel, the organic system, and the paid one.\nWe want to work with you.",
-    "fromText": "The last business we ran this system for went to consistent $50k months with a three person team.\nIf we work together, it is ⟦OPTION ONE⟧ or a monthly retainer.",
-    "gifts": [
+    "observation": "I'm Arman. My team and I built this for you.\nA webinar funnel and an organic funnel.\nWe want to work with you.",
+    "fromText": "The last business we ran, we ran the organic side. Three consecutive $⟦NUMBER⟧k months.",
+    "fromLabel": "the receipt",
+    "paid": [
       {
+        "n": "01",
         "t": "Registration page",
         "url": null
       },
       {
+        "n": "02",
         "t": "VIP upsell page",
         "url": null
       },
       {
+        "n": "03",
         "t": "OTO offer page",
         "url": null
       },
       {
+        "n": "04",
         "t": "Avatar research",
         "url": null
       },
       {
+        "n": "05",
         "t": "Ad scripts",
         "url": null
-      },
-      {
-        "t": "Reels pipeline",
-        "url": "https://laser-smartphone-0d9.notion.site/3c4916f8691b815b8ce1c008a384361e"
       }
     ],
-    "fromLabel": "proof, and the terms"
+    "organic": [
+      {
+        "n": "06",
+        "t": "Reels pipeline",
+        "url": "https://laser-smartphone-0d9.notion.site/3c4916f8691b815b8ce1c008a384361e"
+      },
+      {
+        "n": "07",
+        "t": "YouTube outlier library",
+        "url": "https://laser-smartphone-0d9.notion.site/3c5916f8691b81a9acf5c6fab48d8aa3"
+      }
+    ]
   },
   "registration": {
     "who": "For beginners who want to sell AI to businesses",

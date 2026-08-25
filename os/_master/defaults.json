@@ -9,32 +9,47 @@
     "id": null
   },
   "videoQuote": null,
-  "gifts": [
+  "fromText": null,
+  "fromLabel": "who this is from",
+  "paidLabel": "paid · the webinar funnel",
+  "organicLabel": "organic",
+  "paid": [
     {
+      "n": "01",
       "t": "Registration page",
       "url": null
     },
     {
+      "n": "02",
       "t": "VIP upsell page",
       "url": null
     },
     {
+      "n": "03",
       "t": "OTO offer page",
       "url": null
     },
     {
+      "n": "04",
       "t": "Avatar research",
       "url": null
     },
     {
+      "n": "05",
       "t": "Ad scripts",
-      "url": null
-    },
-    {
-      "t": "Reels pipeline",
       "url": null
     }
   ],
-  "fromText": null,
-  "fromLabel": "who this is from"
+  "organic": [
+    {
+      "n": "06",
+      "t": "Reels pipeline",
+      "url": null
+    },
+    {
+      "n": "07",
+      "t": "YouTube outlier library",
+      "url": null
+    }
+  ]
 }

@@ -80,7 +80,7 @@ if (p.registration) {
   d.whatsappUrl = 'https://wa.me/' + wa;
   d.whatsappLabel = '+' + wa.slice(0, 2) + ' ' + wa.slice(2);
   d.hasMessage = d.videoQuote != null || (d.video && d.video.id);
-  if (p.registration && d.gifts && d.gifts[0] && !d.gifts[0].url)
-    d.gifts[0].url = '../../webinar/registration/' + handle + '/';
+  if (p.registration && d.paid && d.paid[0] && !d.paid[0].url)
+    d.paid[0].url = '../../webinar/registration/' + handle + '/';
   render(join(root, 'os/_master'), d, join(root, 'os', handle, 'index.html'));
 }

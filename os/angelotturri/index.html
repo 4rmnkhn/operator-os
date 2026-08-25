@@ -23,6 +23,11 @@ a:hover{color:var(--ink)}
 .crow:hover{background:#1e1c18}
 .eyelab{font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
 .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.grow{display:flex;align-items:baseline;gap:14px;padding:16px 2px;border-top:1px solid var(--line);color:var(--ink);transition:background 200ms ease}
+a.grow:hover{background:#e6e3dd;color:var(--ink)}
+.gnum{font-size:10px;font-weight:600;color:var(--soft);letter-spacing:.1em;flex:0 0 22px}
+.gtit{font-size:16px;font-weight:500;letter-spacing:-.015em;flex:1}
+.gopen{font-size:13px;font-weight:500;color:var(--accent);display:inline-flex;align-items:center;gap:6px;border-bottom:1px solid currentColor;padding-bottom:2px}
 .pend{font-size:10px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--soft)}
 .sec{}
 @keyframes rise{from{opacity:0;transform:translateY(12px)}}
@@ -50,42 +55,33 @@ a:hover{color:var(--ink)}
 
   <div class="sec" style="padding:76px 26px 0;display:flex;justify-content:flex-end">
     <div style="font-size:14px;line-height:1.7;text-align:right;color:var(--soft);max-width:245px;white-space:pre-line">I'm Arman. My team and I built this for you.
-A webinar funnel, the organic system, and the paid one.
+A webinar funnel and an organic funnel.
 We want to work with you.</div>
   </div>
 
+  
+  <div class="sec" style="padding:64px 26px 0">
+    <div class="eyelab">the receipt</div>
+    <div style="font-size:15px;line-height:1.75;color:var(--body);margin-top:14px;max-width:320px;white-space:pre-line">The last business we ran, we ran the organic side. Three consecutive $⟦NUMBER⟧k months.</div>
+  </div>
+  
+
   <div class="sec" style="padding:84px 26px 0">
-    <div class="grid2" style="border-top:1px solid var(--line)">
-      <div class="cell" style="padding:20px 14px 22px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);min-height:128px;display:flex;flex-direction:column">
-        <div style="font-size:10px;font-weight:600;color:var(--soft);letter-spacing:.1em">01</div>
-        <div style="font-size:16px;font-weight:500;line-height:1.25;letter-spacing:-.015em;margin-top:12px;margin-bottom:auto">Registration page</div>
-        <a class="lnk" href="../../webinar/registration/angelotturri/" style="font-size:13px;font-weight:500;margin-top:16px;align-self:flex-start">open<span class="ar">&#8594;</span></a>
-      </div>
-      <div class="cell" style="padding:20px 14px 22px;border-bottom:1px solid var(--line);min-height:128px;display:flex;flex-direction:column">
-        <div style="font-size:10px;font-weight:600;color:var(--soft);letter-spacing:.1em">02</div>
-        <div style="font-size:16px;font-weight:500;line-height:1.25;letter-spacing:-.015em;margin-top:12px;margin-bottom:auto">VIP upsell page</div>
-        <span class="pend" style="margin-top:16px">in build</span>
-      </div>
-      <div class="cell" style="padding:20px 14px 22px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);min-height:128px;display:flex;flex-direction:column">
-        <div style="font-size:10px;font-weight:600;color:var(--soft);letter-spacing:.1em">03</div>
-        <div style="font-size:16px;font-weight:500;line-height:1.25;letter-spacing:-.015em;margin-top:12px;margin-bottom:auto">OTO offer page</div>
-        <span class="pend" style="margin-top:16px">in build</span>
-      </div>
-      <div class="cell" style="padding:20px 14px 22px;border-bottom:1px solid var(--line);min-height:128px;display:flex;flex-direction:column">
-        <div style="font-size:10px;font-weight:600;color:var(--soft);letter-spacing:.1em">04</div>
-        <div style="font-size:16px;font-weight:500;line-height:1.25;letter-spacing:-.015em;margin-top:12px;margin-bottom:auto">Avatar research</div>
-        <span class="pend" style="margin-top:16px">in build</span>
-      </div>
-      <div class="cell" style="padding:20px 14px 22px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);min-height:128px;display:flex;flex-direction:column">
-        <div style="font-size:10px;font-weight:600;color:var(--soft);letter-spacing:.1em">05</div>
-        <div style="font-size:16px;font-weight:500;line-height:1.25;letter-spacing:-.015em;margin-top:12px;margin-bottom:auto">Ad scripts</div>
-        <span class="pend" style="margin-top:16px">in build</span>
-      </div>
-      <div class="cell" style="padding:20px 14px 22px;border-bottom:1px solid var(--line);min-height:128px;display:flex;flex-direction:column">
-        <div style="font-size:10px;font-weight:600;color:var(--soft);letter-spacing:.1em">06</div>
-        <div style="font-size:16px;font-weight:500;line-height:1.25;letter-spacing:-.015em;margin-top:12px;margin-bottom:auto">Reels pipeline</div>
-        <a class="lnk" href="https://laser-smartphone-0d9.notion.site/3c4916f8691b815b8ce1c008a384361e" style="font-size:13px;font-weight:500;margin-top:16px;align-self:flex-start">open<span class="ar">&#8594;</span></a>
-      </div>
+    <div class="eyelab">paid · the webinar funnel</div>
+    <div style="margin-top:14px;border-bottom:1px solid var(--line)">
+      <a class="grow" href="../../webinar/registration/angelotturri/"><span class="gnum">01</span><span class="gtit">Registration page</span><span class="gopen">open<span class="ar">&#8594;</span></span></a>
+      <div class="grow"><span class="gnum">02</span><span class="gtit">VIP upsell page</span><span class="pend">in build</span></div>
+      <div class="grow"><span class="gnum">03</span><span class="gtit">OTO offer page</span><span class="pend">in build</span></div>
+      <div class="grow"><span class="gnum">04</span><span class="gtit">Avatar research</span><span class="pend">in build</span></div>
+      <div class="grow"><span class="gnum">05</span><span class="gtit">Ad scripts</span><span class="pend">in build</span></div>
+      
+    </div>
+    <div class="eyelab" style="margin-top:44px">organic</div>
+    <div style="margin-top:14px;border-bottom:1px solid var(--line)">
+      <a class="grow" href="https://laser-smartphone-0d9.notion.site/3c4916f8691b815b8ce1c008a384361e"><span class="gnum">06</span><span class="gtit">Reels pipeline</span><span class="gopen">open<span class="ar">&#8594;</span></span></a>
+      <a class="grow" href="https://laser-smartphone-0d9.notion.site/3c5916f8691b81a9acf5c6fab48d8aa3"><span class="gnum">07</span><span class="gtit">YouTube outlier library</span><span class="gopen">open<span class="ar">&#8594;</span></span></a>
+      
+      
     </div>
   </div>
 
@@ -123,14 +119,6 @@ We want to work with you.</div>
       </div>
     </div>
   </div>
-
-  
-  <div class="sec" style="padding:80px 26px 0">
-    <div class="eyelab">proof, and the terms</div>
-    <div style="font-size:15px;line-height:1.75;color:var(--body);margin-top:14px;max-width:320px;white-space:pre-line">The last business we ran this system for went to consistent $50k months with a three person team.
-If we work together, it is ⟦OPTION ONE⟧ or a monthly retainer.</div>
-  </div>
-  
 
   
 
